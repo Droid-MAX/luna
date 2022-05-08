@@ -6,7 +6,6 @@ RUN git clone --depth=1 https://github.com/greatscottgadgets/luna
 RUN pip install poetry yowasp-yosys yowasp-nextpnr-ecp5 -i https://pypi.tuna.tsinghua.edu.cn/simple
 RUN find $(dirname $(which yowasp-yosys)) -type f -name "yowasp-*" -exec sh -c 'x="{}";mv -v $x ${x##*yowasp-}' \;
 WORKDIR ./luna
-RUN echo -e "[[tool.poetry.source]]\nname = \"tsinghua\"\nurl = \"https://pypi.tuna.tsinghua.edu.cn/simple/\"" >> pyproject.toml
-RUN poetry install
+RUN echo -e "[[tool.poetry.source]]\nname = \"tsinghua\"\nurl = \"https://pypi.tuna.tsinghua.edu.cn/simple/\"" >> pyproject.toml && poetry install
 
 CMD ["poetry","run","applets/interactive-test.py"]
