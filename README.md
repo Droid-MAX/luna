@@ -22,14 +22,6 @@ deploying and running container
 sudo docker run -it --device=/dev/ttyUSB0 <image-id>
 ```
 
-or load a image to run
-
-```
-sudo docker load -i luna-test.img
-sudo docker run -it --device=/dev/ttyUSB0 luna-test:latest
-poetry run applets/interactive-test.py
-```
-
 or pull docker image to run
 
 ```
