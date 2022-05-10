@@ -8,4 +8,4 @@ RUN git clone --depth=1 https://github.com/greatscottgadgets/luna
 WORKDIR /luna
 RUN poetry install
 
-CMD ["/bin/bash"]
+ENTRYPOINT ["/bin/bash"]
