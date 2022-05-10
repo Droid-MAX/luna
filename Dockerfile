@@ -6,6 +6,6 @@ RUN find $(dirname $(which yowasp-yosys)) -type f -name "yowasp-*" -execdir bash
 
 RUN git clone --depth=1 https://github.com/greatscottgadgets/luna
 WORKDIR /luna
-RUN poetry install && poetry cache clear --all
+RUN poetry install && echo yes | poetry cache clear --all pypi
 
 ENTRYPOINT ["/bin/bash"]
