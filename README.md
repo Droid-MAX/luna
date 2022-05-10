@@ -19,13 +19,13 @@ sudo docker build -t luna-test:latest .
 deploying and running container
 
 ```
-sudo docker run -it --rm --device=/dev/ttyUSB0 luna-test
+sudo docker run -it --rm --privileged=true -v /dev/bus/usb:/dev/bus/usb luna-test
 ```
 
 or pull docker image to run
 
 ```
 sudo docker pull droidmax61/luna-test
-sudo docker run -it --rm --device=/dev/ttyUSB0 droidmax61/luna-test
+sudo docker run -it --rm --privileged=true -v /dev/bus/usb:/dev/bus/usb droidmax61/luna-test
 poetry run applets/interactive-test.py
 ```
