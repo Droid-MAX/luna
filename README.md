@@ -27,5 +27,5 @@ or pull docker image to run
 ```
 sudo docker pull droidmax61/luna
 sudo docker run -it --rm --privileged=true -v /dev/bus/usb:/dev/bus/usb droidmax61/luna
-poetry run luna/applets/interactive-test.py
+luna/applets/interactive-test.py
 ```
