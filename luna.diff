@@ -1,0 +1,13 @@
+diff --git a/luna/gateware/applets/analyzer.py b/luna/gateware/applets/analyzer.py
+index 2190e3b..9449d63 100644
+--- a/luna/gateware/applets/analyzer.py
++++ b/luna/gateware/applets/analyzer.py
+@@ -18,7 +18,7 @@ from datetime import datetime
+ from amaranth                         import Signal, Elaboratable, Module
+ from usb_protocol.emitters            import DeviceDescriptorCollection
+ 
+-from luna                             import get_appropriate_platform
++from luna.gateware.platform           import get_appropriate_platform
+ from luna.usb2                        import USBDevice, USBStreamInEndpoint
+ 
+ from luna.gateware.utils.cdc          import synchronize
