@@ -8,7 +8,7 @@ RUN pip install --no-cache-dir poetry2setup prompt_toolkit yowasp-yosys yowasp-n
 RUN find $(dirname $(which yowasp-yosys)) -type f -name "yowasp-*" -execdir bash -c 'x="{}";mv -v $x ${x##*yowasp-}' \;
 
 RUN git clone https://github.com/greatscottgadgets/luna $HOME/luna
-COPY luna.diff ./luna/
+COPY luna.diff $HOME/luna/luna.diff
 RUN cd $HOME/luna && git apply luna.diff && rm -f luna.diff
 RUN cd $HOME/luna && poetry2setup > setup.py && pip install --no-cache-dir -e .
 
