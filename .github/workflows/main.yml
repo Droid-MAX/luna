@@ -30,4 +30,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: droidmax61/luna-test:latest
+          tags: droidmax61/LUNA:latest
