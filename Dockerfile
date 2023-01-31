@@ -9,6 +9,6 @@ RUN pip install --no-cache-dir poetry2setup prompt_toolkit pyside6 yowasp-yosys 
 RUN find $(dirname $(which yowasp-yosys)) -type f -name "yowasp-*" -execdir bash -c 'x="{}";mv -v $x ${x##*yowasp-}' \;
 
 RUN git clone https://github.com/greatscottgadgets/luna $HOME/luna
-RUN cd $HOME/luna && poetry2setup > setup.py && pip install --no-cache-dir -e . && luna/applets/interactive-test.py --dry-run
+RUN cd $HOME/luna && poetry2setup > setup.py && pip install --no-cache-dir -e . && python ./luna/applets/interactive-test.py --dry-run
 
 ENTRYPOINT ["/bin/bash"]
